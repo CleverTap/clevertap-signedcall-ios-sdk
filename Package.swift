@@ -10,13 +10,14 @@ let package = Package(
     products: [
         .library(
             name: "DirectCallSDK",
-            targets: ["DirectCall"]),
+            targets: ["DirectCall"]
+        )
     ],
     targets: [
         .target(
             name: "DirectCall",
-            dependencies: ["SocketIO", "DirectCallSDK"],
-        )
+            dependencies: ["SocketIO", "DirectCallSDK"]
+        ),
         .binaryTarget(
             name: "DirectCallSDK",
             url: "https://github.com/CleverTap/clevertap-directcall-ios-sdk/releases/download/0.0.1/DirectCallSDK.xcframework.zip",
