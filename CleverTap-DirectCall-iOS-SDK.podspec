@@ -1,7 +1,6 @@
 Pod::Spec.new do |s|
 s.name                      = "CleverTap-DirectCall-iOS-SDK"
-version                     = `cat sdk-version.txt`
-s.version                   = version
+s.version                   = '0.0.1-alpha'
 s.summary                   = "CleverTap-DirectCall-iOS-SDK supports 1-1 voice calls"
 s.homepage                  = "https://github.com/CleverTap/clevertap-directcall-ios-sdk"
 s.source                    = { :http => "https://github.com/CleverTap/clevertap-directcall-ios-sdk/releases/download/#{s.version}/DirectCallSDK.xcframework.zip" }
