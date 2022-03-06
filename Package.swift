@@ -20,7 +20,7 @@ let package = Package(
         ),
         .binaryTarget(
             name: "DirectCallSDK",
-            url: "https://github.com/CleverTap/clevertap-directcall-ios-sdk/releases/download/0.0.1/DirectCallSDK.xcframework.zip",
+            url: "https://github.com/CleverTap/clevertap-directcall-ios-sdk/releases/download/0.0.1-alpha/DirectCallSDK.xcframework.zip",
             checksum: "9e8b6e5df5812544d76b3398be0df4eabfbb5ea2d6abfefb8e50a85d06e0d3e4"
         )
     ],
