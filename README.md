@@ -10,56 +10,71 @@ import DirectCallSDK
 
 ...
 
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // Override point for customization after application launch.
+    CleverTap.setDebugLevel(CleverTapLogLevel.off.rawValue)
+    CleverTap.autoIntegrate()
+    DirectCall.isLoggingEnabled = true
+    DirectCall.cleverTapInstance = CleverTap.sharedInstance()
+    
+    guard let rootView = self.window?.rootViewController else {
+        return true
+    }
+    DirectCall.registerVoIP(withRootView: rootView)
+    
+    return true
+}
+
 override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
         
     NotificationCenter.default.addObserver(self, selector: #selector(self.callStatus(notification:)), name: NSNotification.Name(rawValue: "MessageReceived"), object: nil)
-    makeCallButton.isEnabled = false
-     
-    CleverTap.autoIntegrate()
-        
-    DirectCall.isLoggingEnabled = true
-        
-    DirectCall.registerVoIP(withRootView: (self), appName: "SampleApp") { [weak self] result in
-          switch result {
-          case .success(_):
-              let initOptions: [String: Any] = [
-                  "accountID": "<CleverTap Account ID>",
-                  "apikey": "<CleverTap Account Token>",
-                  "production": <true/false>,
-                  "cuid" : "<unique user identifier>"
-              ]
-                
-              DispatchQueue.global(qos: .userInitiated).async {
-                  DirectCall.initSDK(withInitOptions: initOptions, ctInstance: CleverTap.sharedInstance()) { result in
-                    switch result {
-                    case .success(let success):
-                        print("SDK Initialized! \(success)")
-                        self?.isDCSDKInitialized = success
-                            
-                    case .failure(let error):
-                        print("SDK initialization failed \(error)")
-                    }
-                }
-          }
-          case .failure(let error):
-              print("VoIP registration is failed! \(error)")
-          }
-       }
-   }
+}
 
-    @IBAction func makeCall(_ sender: Any) {
-        let callOptions: [String: Any] = [
-            "recording": false
-        ]
-        DirectCall.call(withCallee: cuid, withContext: context, withCallOptions: callOptions) { result in
+func initializeDCSDK() {
+    
+    let initOptions: [String: Any] = [
+        "accountID": "Account Id",
+        "apikey": "Api key",
+        "production": false,
+        "cuid" : "cuid"
+    ]
+      
+    DirectCall.initSDK(withInitOptions: initOptions) { [weak self] result in
+        DispatchQueue.main.async {
+            guard let self = self else { return }
             switch result {
-            case .success(let value): print(value)
-            case .failure(let error): print(error)
+            case .success(let success):
+                print("SDK Initialized! \(success)")
+                
+            case .failure(let error):
+                print("SDK initialization failed \(error)")
             }
         }
     }
+}
+
+@IBAction func makeCall(_ sender: Any) {
+    guard DirectCall.isEnabled else {
+        //Handle UI when SDK not initialised
+        return
+    }
+    
+    let callOptions = DCCallOptionsModel(context: context, receiverCuid: receiverCuid,customMetaData: nil)
+    
+    DirectCall.call(callOptions: callOptions) { [weak self] result in
+        guard let self = self else { return }
+        DispatchQueue.main.async {
+            switch result {
+            case .success(let value): 
+                print(value)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+}
 ```
 
 ## Install
