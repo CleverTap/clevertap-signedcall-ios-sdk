@@ -78,8 +78,3 @@ DirectCall.call(callOptions: callOptions) { result in
             }
         }   
 ```
-
-## Manual Installation
-
-Download the `DirectCallSDK.xcframework.zip` included in this repository, unzip, drag it into your project and add it as an embedded framework in your build settings
-
