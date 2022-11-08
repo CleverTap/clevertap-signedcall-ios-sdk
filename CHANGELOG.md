@@ -1,7 +1,7 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-### [Version 0.0.1](https://github.com/CleverTap/clevertap-signedcall-ios-sdk/releases/tag/0.0.1) (Oct 10, 2022)
+### [Version 0.0.1](https://github.com/CleverTap/clevertap-signedcall-ios-sdk/releases/tag/0.0.1) (November 8, 2022)
 
 ### [Version 0.0.4-alpha](https://github.com/CleverTap/clevertap-signedcall-ios-sdk/releases/tag/0.0.4-alpha) (March 20, 2022)
 
