@@ -2,7 +2,7 @@
 All notable changes to this project will be documented in this file.
 
 ### [Version 0.0.3](https://github.com/CleverTap/clevertap-signedcall-ios-sdk/releases/tag/0.0.3) (June 22, 2022)
-- Compatible with CleverTap iOS SDK v5.0.1 and later versions
+- Compatible with CleverTap iOS SDK v5.0.0 and later versions
 
 ### [Version 0.0.2](https://github.com/CleverTap/clevertap-signedcall-ios-sdk/releases/tag/0.0.2) (February 21, 2022)
 - Compatible with CleverTap iOS SDK v4.2.0 and later versions
