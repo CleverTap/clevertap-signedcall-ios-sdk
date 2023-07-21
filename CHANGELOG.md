@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+### [Version 0.0.4] (July 21, 2023)
+##### 
+- Adds public property `rootViewController`
+
 ### [Version 0.0.3](https://github.com/CleverTap/clevertap-signedcall-ios-sdk/releases/tag/0.0.3) (June 22, 2022)
 - Compatible with CleverTap iOS SDK v5.0.0 and later versions
 
