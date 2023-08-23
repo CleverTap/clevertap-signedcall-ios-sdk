@@ -1,7 +1,7 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-### [Version 0.0.5] (Aug 22, 2023)
+### [Version 0.0.5] (Aug 23, 2023)
 ##### 
 * Supports [CleverTap iOS SDK v5.2.0](https://github.com/CleverTap/clevertap-ios-sdk/releases/tag/5.2.0).
 * Adds support for hiding the **Powered by Signed Call** label from VoIP call screens.
