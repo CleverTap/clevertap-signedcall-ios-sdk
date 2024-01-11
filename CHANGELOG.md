@@ -1,6 +1,20 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+### [Version 0.0.6] (January 11, 2024)
+### Adds
+ * Supports [CleverTap iOS SDK v5.2.2](https://github.com/CleverTap/clevertap-ios-sdk/blob/master/CHANGELOG.md#version-522-november-21-2023).
+ * Adds new NSNotification.Name `SCCallStatusDidUpdate` to observe the changes in the call state, providing updates to both the initiator and receiver of the call.
+
+ #### Breaking Changes
+ * The `MessageReceived` NSNotification observer is no longer supported. Please use the new NSNotification.Name `SCCallStatusDidUpdate`.
+
+ #### Behaviour Changes
+ * Handles UX issues during network loss or switch by invalidating the socket reconnection and establishing an active connection to process the call related actions.
+
+ #### Bug Fixes
+ * Addresses an infinite **Connecting** state issue on the call screen which was triggered by using CUIDs longer than 15 characters. In this version, the SDK extends support to CUIDs ranging from 5 to 50 characters.
+ 
 ### [Version 0.0.5] (Aug 23, 2023)
 ##### 
 * Supports [CleverTap iOS SDK v5.2.0](https://github.com/CleverTap/clevertap-ios-sdk/releases/tag/5.2.0).
