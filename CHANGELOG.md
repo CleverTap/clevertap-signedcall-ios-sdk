@@ -9,9 +9,6 @@ All notable changes to this project will be documented in this file.
  #### Breaking Changes
  * The `MessageReceived` NSNotification observer is no longer supported. Please use the new NSNotification.Name `SCCallStatusDidUpdate`.
 
- #### Behaviour Changes
- * Handles UX issues during network loss or switch by invalidating the socket reconnection and establishing an active connection to process the call related actions.
-
  #### Bug Fixes
  * Addresses an infinite **Connecting** state issue on the call screen which was triggered by using CUIDs longer than 15 characters. In this version, the SDK extends support to CUIDs ranging from 5 to 50 characters.
  
