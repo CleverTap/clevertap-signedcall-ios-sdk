@@ -1,7 +1,7 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-### [Version 0.0.6] (January 11, 2024)
+### [Version 0.0.6] (January 19, 2024)
 ### Adds
  * Supports [CleverTap iOS SDK v5.2.2](https://github.com/CleverTap/clevertap-ios-sdk/blob/master/CHANGELOG.md#version-522-november-21-2023).
  * Adds new NSNotification.Name `SCCallStatusDidUpdate` to observe the changes in the call state, providing updates to both the initiator and receiver of the call.
