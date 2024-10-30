@@ -1,6 +1,14 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+### [Version 0.0.8] (October 30, 2024)
+### Adds
+ * **Configure Remote Context for Receiver's call screens**:
+    * Adds support for setting a *remoteContext* parameter within `SCCustomMetadata` object during call initiation, allowing to pass custom context for receiver's call screens.
+  
+### Fixes
+ * Resolved *sa_family_t* declaration issue to ensure compatibility with Xcode 16.
+ 
 ### [Version 0.0.7] (March 15, 2024)
 ### Adds
  * Supports [CleverTap iOS SDK v6.1.0](https://github.com/CleverTap/clevertap-ios-sdk/blob/master/CHANGELOG.md#version-610-february-22-2024)
