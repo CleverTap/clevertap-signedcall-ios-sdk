@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+### [Version 0.0.9] (November 18, 2024)
+### Fixes
+ * Resolves `EXC_BAD_ACCESS` error that occurred when clicking the mute button on the CallKit screen. This exception was only observed in debugging mode (when connected via USB).
+ * Fixes synchronization issues between the Mute and Speaker controllers on the CallKit and native screens.
+ 
 ### [Version 0.0.8] (October 30, 2024)
 ### Adds
  * **Configure Remote Context for Receiver's call screens**:
